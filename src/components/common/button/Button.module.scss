@@ -1,0 +1,26 @@
+.wrapper {
+  // background-color: black;
+  color: white;
+}
+.save {
+  background-color: #333;
+  font-size: 14px;
+  padding: 5px 18px;
+  border-radius: 5px;
+}
+.del {
+  color: #333;
+  font-size: 18px;
+  transition: color 0.2s ease-in-out;
+  &:hover {
+    color: white;
+  }
+}
+.close {
+  color: #333;
+  font-size: 18px;
+  transition: color 0.2s ease-in-out;
+  &:hover {
+    color: rgb(255, 0, 0);
+  }
+}

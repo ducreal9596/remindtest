@@ -1,0 +1,15 @@
+.note-list {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 2px solid greenyellow;
+  width: 500px;
+  max-height: 100%;
+  border-radius: 8px;
+}
+.note {
+  display: flex;
+}
+.empty {
+  text-align: center;
+}

@@ -1,0 +1,28 @@
+.note-cart {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 2px solid rgb(160, 159, 159);
+  margin: 5px;
+  padding: 2px 5px;
+  border-radius: 5px;
+  background-color: rgb(199, 198, 198, 0.2);
+  transition: background-color 0.2s ease-in-out;
+  &:hover {
+    background-color: rgba(254, 44, 85, 0.8);
+    color: white;
+  }
+}
+.active {
+  background-color: rgba(254, 44, 85, 1);
+  color: white;
+}
+.note {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+.date-note {
+  font-weight: 500;
+}
