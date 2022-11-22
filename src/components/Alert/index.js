@@ -9,7 +9,7 @@ const cl = classNames.bind(styles);
 const Alert = ({ title, onClose }) => {
   return (
     <div className={cl('wrapper')}>
-      <h2 className={cl('title')}> Hôm nay là: {title} đó nha</h2>
+      <h2 className={cl('title')}> Hôm nay là: {title} nghe bòa dòa</h2>
       <audio
         autoPlay={true}
         loop={true}
