@@ -8,6 +8,7 @@ const Input = ({ focus, validate, type, title, placeholder, inputValue, onHandle
       <label className={cl('label')}>{title}</label>
       <div className={cl('form-group')}>
         <input
+          className={cl('input-form')}
           autoFocus={focus}
           type={type}
           placeholder={placeholder}
