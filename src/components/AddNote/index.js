@@ -75,7 +75,7 @@ const AddNote = () => {
     } else if (title.length < 5) {
       setValidate({ content: '* Nội dung ít nhất 5 chữ nghe' });
       return;
-    } else if (title.length > 80) {
+    } else if (title.length >= 80) {
       setValidate({ content: '* Nhập chi mà dài rứa ông dòa' });
       return;
     }
@@ -94,7 +94,6 @@ const AddNote = () => {
       dispatch(addTask({ title, day, hour }));
       setHaha((prev) => prev + 1);
       window.location.reload();
-      console.log(haha);
     }
   };
   return (

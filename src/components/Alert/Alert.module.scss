@@ -1,5 +1,5 @@
 .wrapper {
-  position: fixed;
+  position: relative;
   top: 10px;
   left: 50;
   margin: 0 auto;
@@ -8,11 +8,19 @@
   background-color: #fff;
   padding: 20px;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  // width: 50%;
+  // justify-content: space-between;
+  // width: 100%;
   border-radius: 10px;
+  margin-bottom: 30px;
 }
 .title {
   margin-right: 40px;
+  width: 100%;
+}
+@media only screen and (max-width: 768px) {
+  .wrapper {
+    width: 100%;
+  }
 }

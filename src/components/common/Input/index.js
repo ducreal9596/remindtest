@@ -6,15 +6,17 @@ const Input = ({ focus, validate, type, title, placeholder, inputValue, onHandle
   return (
     <div className={cl('wrapper')}>
       <label className={cl('label')}>{title}</label>
-      <input
-        autoFocus={focus}
-        type={type}
-        placeholder={placeholder}
-        onChange={onHandleChange}
-        ref={children}
-        value={inputValue}
-      />
-      <p className={cl('error')}>{validate}</p>
+      <div className={cl('form-group')}>
+        <input
+          autoFocus={focus}
+          type={type}
+          placeholder={placeholder}
+          onChange={onHandleChange}
+          ref={children}
+          value={inputValue}
+        />
+        <p className={cl('error')}>{validate}</p>
+      </div>
     </div>
   );
 };
