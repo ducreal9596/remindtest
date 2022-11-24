@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Input.module.scss';
 import classNames from 'classnames/bind';
 const cl = classNames.bind(styles);
-const Input = ({ focus, validate, type, title, placeholder, inputValue, onHandleChange, children }) => {
+const Input = ({ inputName, focus, validate, type, title, placeholder, inputValue, onHandleChange }) => {
   return (
     <div className={cl('wrapper')}>
       <label className={cl('label')}>{title}</label>
@@ -13,8 +13,8 @@ const Input = ({ focus, validate, type, title, placeholder, inputValue, onHandle
           type={type}
           placeholder={placeholder}
           onChange={onHandleChange}
-          ref={children}
           value={inputValue}
+          name={inputName}
         />
         <p className={cl('error')}>{validate}</p>
       </div>

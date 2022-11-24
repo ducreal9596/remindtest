@@ -10,7 +10,7 @@ export const loadtContext = createContext();
 const NoteCart = ({ item, index, active }) => {
   const [isload, setIsload] = useState(false);
   const handleDelete = (id) => {
-    data.task.splice(id, 1);
+    data.splice(id, 1);
     localStorage.setItem('task', JSON.stringify(data));
     setIsload(true);
     window.location.reload();

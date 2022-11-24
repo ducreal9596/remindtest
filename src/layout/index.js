@@ -10,10 +10,11 @@ const cl = classNames.bind(styles);
 Home.propTypes = {};
 
 function Home() {
+  const newDay = new Date();
   const [day, setDay] = useState();
   const [data, setData] = useState(() => {
     const save = JSON.parse(localStorage.getItem('task')) ?? [];
-    return save.task ?? [];
+    return save ?? [];
   });
   const [active, setActive] = useState('');
   const [title, setTitle] = useState('');
@@ -24,7 +25,6 @@ function Home() {
       setDay(time(newDay));
     }, 1000);
   }, []);
-  const newDay = new Date();
   let note;
   if (data !== []) {
     note = data.filter((item) => item.day === date(newDay));

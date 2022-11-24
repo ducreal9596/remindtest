@@ -2,20 +2,20 @@ import React, { useContext, useEffect, useState } from 'react';
 import styles from './Listnote.module.scss';
 import classNames from 'classnames/bind';
 import NoteCart, { loadtContext } from '../NoteCart';
-import { LoadData } from '../AddNote';
+// import { LoadData } from '../AddNote';
 const cl = classNames.bind(styles);
 
 ListNote.propTypes = {};
 
 function ListNote({ active }) {
   const [data, setData] = useState([]);
-  const change = useContext(LoadData);
+  // const change = useContext(LoadData);
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem('task'));
     if (data) {
-      setData(data.task);
+      setData(data);
     }
-  }, [change]);
+  }, []);
   return (
     <div className={cl('note-list')}>
       {data.length > 0 ? (
