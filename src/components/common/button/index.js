@@ -3,11 +3,12 @@ import styles from './Button.module.scss';
 import classNames from 'classnames/bind';
 const cl = classNames.bind(styles);
 
-const Button = ({ children, onHandle, save, del, close }) => {
+const Button = ({ children, onHandle, save, del, edit, close }) => {
   const classes = {
     save,
     del,
     close,
+    edit,
   };
   return (
     <div>

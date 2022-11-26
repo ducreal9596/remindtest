@@ -3,7 +3,7 @@
   flex-direction: column;
   width: 100%;
   border: 2px solid rgb(160, 159, 159);
-  margin: 5px;
+  margin: 5px 0;
   padding: 2px 5px;
   border-radius: 5px;
   background-color: rgb(199, 198, 198, 0.2);
@@ -25,4 +25,10 @@
 }
 .date-note {
   font-weight: 500;
+}
+.btn-edit {
+  display: flex;
+  width: 45px;
+  justify-content: space-between;
+  margin-top: 5px;
 }

@@ -1,8 +1,26 @@
 import React from 'react';
 import styles from './Input.module.scss';
 import classNames from 'classnames/bind';
+import { useFormContext } from 'react-hook-form';
+import { ErrorMessage } from '@hookform/error-message';
 const cl = classNames.bind(styles);
-const Input = ({ inputName, focus, validate, type, title, placeholder, inputValue, onHandleChange }) => {
+const Input = ({
+  inputName,
+  minvalue,
+  messageRequired,
+  pattenValue,
+  focus,
+  messPatn,
+  title,
+  placeholder,
+  messMinLength,
+  mesMaxLength,
+  maxValue,
+  type,
+  messDate,
+  ipdate,
+}) => {
+  const { register, errors } = useFormContext();
   return (
     <div className={cl('wrapper')}>
       <label className={cl('label')}>{title}</label>
@@ -10,16 +28,22 @@ const Input = ({ inputName, focus, validate, type, title, placeholder, inputValu
         <input
           className={cl('input-form')}
           autoFocus={focus}
-          type={type}
           placeholder={placeholder}
-          onChange={onHandleChange}
-          value={inputValue}
+          type={type}
           name={inputName}
+          {...register(inputName, {
+            required: messageRequired,
+            minLength: { value: minvalue, message: messMinLength },
+            maxLength: { value: maxValue, message: mesMaxLength },
+            pattern: { value: pattenValue, message: messPatn },
+            validate: ipdate ? (value) => value >= ipdate || messDate : null,
+          })}
         />
-        <p className={cl('error')}>{validate}</p>
+        <p className={cl('error')}>
+          <ErrorMessage errors={errors} name={inputName} />
+        </p>
       </div>
     </div>
   );
 };
-
 export default Input;

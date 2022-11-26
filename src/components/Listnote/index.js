@@ -1,26 +1,17 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React from 'react';
 import styles from './Listnote.module.scss';
 import classNames from 'classnames/bind';
-import NoteCart, { loadtContext } from '../NoteCart';
-// import { LoadData } from '../AddNote';
+import NoteCart from '../NoteCart';
+import { useSelector } from 'react-redux';
 const cl = classNames.bind(styles);
-
 ListNote.propTypes = {};
-
-function ListNote({ active }) {
-  const [data, setData] = useState([]);
-  // const change = useContext(LoadData);
-  useEffect(() => {
-    const data = JSON.parse(localStorage.getItem('task'));
-    if (data) {
-      setData(data);
-    }
-  }, []);
+function ListNote() {
+  const data = useSelector((state) => state.noteList);
   return (
     <div className={cl('note-list')}>
       {data.length > 0 ? (
         data.map((item, index) => {
-          return <NoteCart active={active} key={index} item={item} index={index} />;
+          return <NoteCart key={index} item={item} index={index} />;
         })
       ) : (
         <h2 className={cl('empty')}>List note empty</h2>
